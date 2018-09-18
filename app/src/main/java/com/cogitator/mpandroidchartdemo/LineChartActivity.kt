@@ -54,8 +54,8 @@ class LineChartActivity : AppCompatActivity(), SeekBar.OnSeekBarChangeListener,
         mSeekBarX = findViewById(R.id.seekBar1)
         mSeekBarY = findViewById(R.id.seekBar2)
 
-        mSeekBarX!!.progress = 45
-        mSeekBarY!!.progress = 100
+        mSeekBarX!!.progress = 10
+        mSeekBarY!!.progress = 50
 
         mSeekBarY!!.setOnSeekBarChangeListener(this)
         mSeekBarX!!.setOnSeekBarChangeListener(this)
@@ -137,11 +137,11 @@ class LineChartActivity : AppCompatActivity(), SeekBar.OnSeekBarChangeListener,
         //mChart.getViewPortHandler().setMaximumScaleX(2f);
 
         // add data
-        setData(45, 100f)
+        setData(10, 50f)
 
-        //        mChart.setVisibleXRange(20);
-        //        mChart.setVisibleYRange(20f, AxisDependency.LEFT);
-        //        mChart.centerViewTo(20, 50, AxisDependency.LEFT);
+//        mChart?.setVisibleXRange(20F)
+//        mChart?.setVisibleYRange(20F, YAxis.AxisDependency.LEFT)
+//        mChart?.centerViewTo(20F, 50F, YAxis.AxisDependency.LEFT)
 
         mChart!!.animateX(2500)
         //mChart.invalidate();
