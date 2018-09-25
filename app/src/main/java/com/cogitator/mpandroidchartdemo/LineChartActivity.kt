@@ -339,7 +339,7 @@ class LineChartActivity : AppCompatActivity(), SeekBar.OnSeekBarChangeListener,
             mChart!!.notifyDataSetChanged()
         } else {
             // create a dataset and give it a type
-            set1 = LineDataSet(values, "DataSet 1")
+            set1 = LineDataSet(values, "Account Performance")
 
             set1.setDrawIcons(false)
 
