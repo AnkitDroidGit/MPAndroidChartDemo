@@ -97,10 +97,14 @@ class LineChartActivity : AppCompatActivity(), SeekBar.OnSeekBarChangeListener,
         llXAxis.textSize = 10f
 
         val xAxis = mChart!!.xAxis
-        xAxis.enableGridDashedLine(10f, 10f, 0f)
-        //xAxis.setValueFormatter(new MyCustomXAxisValueFormatter());
-        //xAxis.addLimitLine(llXAxis); // add x-axis limit line
+        xAxis.enableGridDashedLine(10f, 10f, 1f)
 
+        xAxis.mAxisMinimum = 1F
+        xAxis.mAxisMaximum = 12F
+        xAxis.labelCount = 5
+
+        xAxis.valueFormatter = CustomXAxisValueFormatter()
+        //xAxis.addLimitLine(llXAxis); // add x-axis limit line
 
         val tf = Typeface.createFromAsset(assets, "OpenSans-Regular.ttf")
 
@@ -118,7 +122,7 @@ class LineChartActivity : AppCompatActivity(), SeekBar.OnSeekBarChangeListener,
         ll2.textSize = 10f
         ll2.typeface = tf
 
-        val leftAxis = mChart!!.axisLeft
+        val leftAxis = mChart!!.axisRight
         leftAxis.removeAllLimitLines() // reset all limit lines to avoid overlapping lines
         leftAxis.addLimitLine(ll1)
         leftAxis.addLimitLine(ll2)
@@ -131,13 +135,13 @@ class LineChartActivity : AppCompatActivity(), SeekBar.OnSeekBarChangeListener,
         // limit lines are drawn behind data (and not on top)
         leftAxis.setDrawLimitLinesBehindData(true)
 
-        mChart!!.axisRight.isEnabled = false
+        mChart!!.axisLeft.isEnabled = false
 
         //mChart.getViewPortHandler().setMaximumScaleY(2f);
         //mChart.getViewPortHandler().setMaximumScaleX(2f);
 
         // add data
-        setData(10, 50f)
+        setData(12, 50f)
 
 //        mChart?.setVisibleXRange(20F)
 //        mChart?.setVisibleYRange(20F, YAxis.AxisDependency.LEFT)
