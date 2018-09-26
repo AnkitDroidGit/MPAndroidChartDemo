@@ -102,7 +102,7 @@ class LineChartActivity : AppCompatActivity(), SeekBar.OnSeekBarChangeListener,
         xAxis.mAxisMinimum = 1F
         xAxis.mAxisMaximum = 12F
         xAxis.labelCount = 5
-
+        xAxis.labelRotationAngle = 30F
         xAxis.valueFormatter = CustomXAxisValueFormatter()
         //xAxis.addLimitLine(llXAxis); // add x-axis limit line
 
